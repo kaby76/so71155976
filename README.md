@@ -9,6 +9,27 @@ Run "bash build.sh"
 
 You should see the output "|A B|A C|A D", meaning class "A" contains a reference to class "B", etc.
 
+The problem here parses this code and runs an xpath to find these relationships.
+
+
+	import org.fake.B;
+	class A {
+	    class B {}
+	    private B myReferenceToB;
+	    private C myReferenceToC;
+	    private D myReferenceToD;
+	    A(){
+		this.myReferenceToB = new B();
+	    }
+	    public method(){
+		B refrenceFromMethod = new B();
+	    }
+	    private method2(){
+		B refrenceFromPrivateMethod = new B();
+	    }
+	}
+	class B {}
+
 The problem you see with this example is the lack of information to decide what a reference
 "B" refers to. There is no symbol table implementation, so the meaning of "B" depends on the
 scope and qualifications. A specification for the construction of the symbol table can be made,
