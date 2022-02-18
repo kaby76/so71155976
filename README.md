@@ -36,7 +36,7 @@ xpath expression for "using" relationship within classBody:
 	//classDeclaration/string-join(./classBody/classBodyDeclaration/memberDeclaration/fieldDeclaration/typeType/classOrInterfaceType/identifier/IDENTIFIER/text(), concat('|', ./identifier/IDENTIFIER/text(), ' '))
 
 The problem you see with this example is the lack of information to decide what a reference
-"B" refers to. There is no symbol table implementation, so the meaning of "B" depends on the
+"B" means. There is no symbol table implementation, so the meaning of "B" depends on the
 scope and qualifications. A specification for the construction of the symbol table can be made,
 but normally the relationship computed here would not be precomputed. This is why you also need
 a query language on top of the computed semantics.
