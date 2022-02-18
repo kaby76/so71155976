@@ -48,7 +48,10 @@ dotnet build
 
 echo Demonstrate class reference example...
 cat << END > ex.java
+
+import org.fake.B;
 class A {
+    class B {}
     private B myReferenceToB;
     private C myReferenceToC;
     private D myReferenceToD;
